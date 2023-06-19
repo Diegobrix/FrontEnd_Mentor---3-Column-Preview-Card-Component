@@ -20,12 +20,99 @@
    font-size: 15px;
 }
 
+* {
+   box-sizing: inherit;
+}
+
+body {
+   display: grid;
+   place-items: center;
+   min-height: 100vh;
+   min-height: 100dvh;
+
+   box-shadow: border-box;
+   margin: 0;
+   padding: 3rem 0;
+}
+
 .vehicle-type-title {
    text-transform: uppercase;
 }
 
+.type-icon {
+   display: block;
+   width: 2.5rem;
+   aspect-ratio: 1;
+
+   background: var(--car-type) no-repeat;
+   background-size: contain;
+   background-position: center center;
+}
+
+.sedans {
+   --car-type: url("../images/icon-sedans.svg");
+}
+
+.suvs {
+   --car-type: url("../images/icon-suvs.svg");
+}
+
+.luxury {
+   --car-type: url("../images/icon-luxury.svg");
+}
+
+h2 {
+   margin: 0;
+   font-family: var(--ff-200);
+   font-size: 1.6rem;
+   color: var(--neutral-200);
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+main section {
+   --btn-color: var(--primary-200);
+
+   display: inherit;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 10px;
+   background: var(--primary-200);
+   width: 100%;
+   padding: 2rem;
+   font-family: var(--ff-100);
+   color: var(--neutral-100);
+}
+
+main >:first-child {
+   --btn-color: var(--primary-100);
+   background: var(--primary-100);
+}
+
+main >:last-child {
+   --btn-color: var(--primary-300);
+   background: var(--primary-300);
+}
+
+.vehicle-type-details {
+   font-size: .8rem;
+   max-width: 12rem;
+   line-height: 1.3rem;
+}
+
 button {
    border: 0;
-   background: #0000;
+   background: var(--neutral-200);
+   color: var(--btn-color);
+   padding: .7rem 1.2rem;
+   font-family: var(--ff-100);
+   font-size: .7rem;
+   border-radius: 25vw;
    cursor: pointer;
 }
